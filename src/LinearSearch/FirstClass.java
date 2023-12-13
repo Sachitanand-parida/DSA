@@ -1,8 +1,6 @@
-package Rough;
+package LinearSearch;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class FirstClass {
     public static void main(String[] args) {

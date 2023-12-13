@@ -1,4 +1,4 @@
-package Rough;
+package LinearSearch;
 
 public class Notes {
 
