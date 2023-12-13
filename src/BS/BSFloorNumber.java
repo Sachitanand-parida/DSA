@@ -1,0 +1,33 @@
+package BS;
+
+public class BSFloorNumber {
+    //ceiling number= Largest element in the array <= target
+    public static void main(String[] args) {
+
+        int[] arr={2,4,5,7,8,12,23};
+        int target=5;
+
+        int bs=floor(arr,target);
+        System.out.println("Number found "+ arr[bs]);
+        //System.out.println("hello");
+
+    }
+
+    private static int floor(int[] arr, int target) {
+
+        int start= 0;
+        int end=arr.length-1;
+        int middle=0;
+
+        while (start<= end){
+            middle= start+(end-start)/2;
+
+            if(target>arr[middle])
+                start=middle+1;
+            else if(target<arr[middle])
+                end=middle-1;
+            else return middle;
+        }
+        return end;
+    }
+}
