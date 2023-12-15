@@ -1,22 +1,22 @@
 package BinarySearch;
 
-public class CeilingOfNumber{
+public class FloorOfNumber {
     public static void main(String[] args) {
         int[] arr={2,3,6,7,12,24,36,47,68};
-        int target=0;
-        int result=ceilingNumber(arr,target);
+        int target=35;
+        int result=floorNumber(arr,target);
         if(result !=-1)
             System.out.println(arr[result]);
         else
-            System.out.println("Ceiling of the number could not be found");
+            System.out.println("Floor of the number could not be found");
     }
 
-    private static int ceilingNumber(int[] arr, int target) {
+    private static int floorNumber(int[] arr, int target) {
         int start=0, end=arr.length-1, mid=0;
-        if(target>=arr[arr.length-1])       //edge case scenarios
-            return -1;
         if(target<arr[0])
-            return 0;
+            return -1;
+        if(target>arr[arr.length-1])
+            return arr.length-1;
 
         while(start<=end){
             mid=start+(end-start)/2;
@@ -29,6 +29,6 @@ public class CeilingOfNumber{
             
             else return mid;
         }
-        return start;
+        return end;
     }
 }
