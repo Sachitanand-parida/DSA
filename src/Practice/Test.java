@@ -308,7 +308,7 @@ public class Test {
 
 
         /*
-         Reverse each work of a string
+         Reverse each word of a string
 
          String str="Java Concept Of The Day";
 
@@ -524,6 +524,62 @@ public class Test {
         return arr;
     }
          */
+        /*
+        Longest common prefix problem
+
+        String[] str= {"geeksForGeeks","geeks","gee","geeksFor"};
+
+        String prefix=str[0];
+
+        for (int i = 1; i < str.length; i++) {
+            while (str[i].indexOf(prefix)!=0 ){   //until prefix and str[i] both become equal, keep shortening the prefix
+                prefix=prefix.substring(0,prefix.length()-1);
+            }
+        }
+        System.out.println(prefix);
+         */
+        /*
+        Best time to buy and sell stocks
+
+          int[] arr={2,4,1};
+          int buy=arr[0];
+          int maxProfit=0;
+
+          for (int i = 1; i < arr.length; i++) {
+            if(buy>arr[i])
+                buy=arr[i];
+
+            else if (arr[i]-buy>maxProfit)
+                maxProfit=arr[i]-buy;
+        }
+        System.out.println(maxProfit);
+         */
+        /*
+        Reverse words in a string
+
+        String str="the sky is blue";
+        String result="";
+        String[] strArr = str.split(" ");
+        for (int i = strArr.length-1; i >=0; i--) {
+                result=result+strArr[i]+" ";
+        }
+        System.out.println(result);
+
+        ==============================================================
+        Reverse words when we have multiple spaces in between words
+
+        String str="the sky is          blue";
+        str=str.replaceAll(" +"," ");
+
+        System.out.println(str);
+        String result="";
+        String[] strArr = str.split(" ");
+        for (int i = strArr.length-1; i >=0; i--) {
+                result=result+strArr[i]+" ";
+        }
+        System.out.println("\n"+result.trim());
+         */
+
     }
 }
 
