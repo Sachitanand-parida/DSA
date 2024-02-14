@@ -580,6 +580,24 @@ public class Test {
         System.out.println("\n"+result.trim());
          */
 
+        /*
+        Palindrome using regex
+
+        String str="A man, a plan, a canal: Panama";
+        str=str.replaceAll("[,: ]","");
+        System.out.println(str);
+        StringBuilder sb= new StringBuilder(str);
+        StringBuilder reverse = sb.reverse();
+        System.out.println(reverse);
+        if(str.equalsIgnoreCase(reverse.toString()))
+            System.out.println("Palindrome");
+        else System.out.println("Not palindrome");
+         */
+
+        /*
+
+         */
+
     }
 }
 
