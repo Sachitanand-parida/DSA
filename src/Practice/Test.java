@@ -595,7 +595,21 @@ public class Test {
          */
 
         /*
+        String str="      hello  sarfaraj ; how     are you?   ";
+       String str2=str.replaceAll("[^a-zA-Z0-9]","");
+       System.out.println(str2);
 
+         */
+
+        /*
+        Read data from a file and use it in a stream to perform operations
+
+        Path path= Paths.get("users/sachit/downloads/...../file");
+
+        Stream<String> noteBook= Files.lines(path);
+        List<String> collect= noteBook.flatMap(line->Arrays.stream(line.split(" ")).toList();
+
+        collect.forEach(System.out::println);
          */
 
     }
