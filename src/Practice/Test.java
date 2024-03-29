@@ -612,6 +612,72 @@ public class Test {
         collect.forEach(System.out::println);
          */
 
+        /*
+        Collect data in a TreeSet
+
+        TreeSet<Employee> sortedEmployeeList= list.stream()
+                            .collect(Collectors.toCollection(TreeSet::new));
+         */
+
+        /*
+        Collect data in a Map
+
+        Map<Integer, String> getNameById= list.stream()
+                            .collect(Collectors.toMap(Employee::getId(), Employee::getName());
+         */
+        /*
+        Partition data on condition: If true --> X data, if false --> Y data
+
+        Map<Boolean, List<Employee>> partitionedData= employeeList.stream()
+                            .collect(Collectors.partitionBY(emp->emp.getGender() =='M'));
+
+        List<Employee> maleEmployee=partitionedData.get(true);
+        List<Employee> femaleEmployee= partitionedData.get(false);
+         */
+
+        /*
+        GroupingBy characteristic
+
+        Map<String, List<Employee>> groupedData= employeeList.stream()
+                            .collect(Collectors.groupingBy(emp->emp.getDesignation());
+         */
+
+        /*
+        Joining(delimiter)
+
+        String employeeName= employeeList.stream().map(Employee::getName()).collect(Collectors.joining(", "));
+         */
+
+        /*
+        Total salary taken by all devs, testers, Leads, managers
+
+        Map<String,Double> salaryDistribution= employeeList.stream()
+                            .collect(
+                             Collectors.groupingBy(Employee::getDesignation)
+                            ,Collectors.summingDouble(Employee::getSalary)
+                            );
+
+         */
+        /*
+        Get the max salary in the respective departments
+
+        Map<String, Optional<Employee>> maxSalaryEmployee= employeeList.stream()
+                            .collect(
+                             Collectors.groupingBy(Employee::getDesignation)
+                            ,Collectors.maxBy(Comparator.comparing(Employee::getSalary));
+         */
+
+        /*
+        Max salaries in the respective departments
+
+        Map<String,Options<Double>> maxSalaryDeptWise= employeeList>stream()
+                            .collect(
+                            Collectors.groupingBy(Employee::getDesignation)
+                            ,Collectors.mapping(
+                                    emp->emp.getSalary(),
+                                    Collectors.maxBy(Comparator.comparing(Function.identity()))));
+         */
+
     }
 }
 
