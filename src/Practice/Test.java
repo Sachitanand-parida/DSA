@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 public class Test {
     public static void main(String[] args) {
 
+
         //Reverse an integer
 
         /*Integer num=12345;
@@ -677,6 +678,11 @@ public class Test {
                                     emp->emp.getSalary(),
                                     Collectors.maxBy(Comparator.comparing(Function.identity()))));
          */
+
+	    //Collect set data into a TreeSet
+	    /*
+		TreeSet<Integer> sortedSet= set.stream().collect(Collectors.toCollection(TreeSet::new));
+	    */
 
     }
 }
