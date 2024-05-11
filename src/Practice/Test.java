@@ -684,6 +684,14 @@ public class Test {
 		TreeSet<Integer> sortedSet= set.stream().collect(Collectors.toCollection(TreeSet::new));
 	    */
 
+	    //Filtering map and collecting it into a filteredMap.
+	    /*
+	    Map<String, String> filteredContacts= contacts.entrySet().stream(). 
+		    .filter(contact-> "john".equalsIgnoreCase(contact.getValue()))
+		    .collect(Collectors.toMap(c->c.getKey(), c->c.getValue()));
+
+	    */
+
     }
 }
 
