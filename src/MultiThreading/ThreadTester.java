@@ -1,4 +1,4 @@
-package TM;
+package MultiThreading;
 
 public class ThreadTester {
     public static void main(String[] args) {

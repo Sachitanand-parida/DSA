@@ -2,6 +2,9 @@ package Sorting;
 
 import java.util.Arrays;
 
+
+//Select an element and put it at its correct index.  O(N^2) time complexity.
+//Performs well in a small lists.
 public class SelectionSort  {
     public static void main(String[] args) {
 

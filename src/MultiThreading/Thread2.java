@@ -1,4 +1,4 @@
-package TM;
+package MultiThreading;
 
 public class Thread2 implements Runnable{
     @Override

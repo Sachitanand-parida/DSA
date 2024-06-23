@@ -1,4 +1,4 @@
-package TM;
+package MultiThreading;
 
 public class Thread1 extends Thread{
 
