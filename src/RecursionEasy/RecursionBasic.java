@@ -1,4 +1,4 @@
-package Recursion;
+package RecursionEasy;
 
 public class RecursionBasic {
     public static void main(String[] args) {
