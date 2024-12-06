@@ -1,16 +1,16 @@
-package BinarySearch;
+package BinarySearchQuestions;
 
 import java.util.Arrays;
 
-public class BinarySearch2DSortedArray {
+public class BinarySearch2DArray {
     public static void main(String[] args) {
     int[][] matrix={                //every row and column is sorted in ascending array form
-            {1,2,13,14},
-            {25,26,37,38},
-            {49,50,61,62},
-            {73,84,85,96}
+            {10,20,30,40},
+            {15,25,35,45},
+            {28,29,37,49},
+            {33,34,38,50}
     };
-        System.out.println(Arrays.toString(binSearch2D(matrix,49)));
+        System.out.println(Arrays.toString(binSearch2D(matrix,37)));
 
     }
     private static int[] binSearch2D(int[][] matrix, int target){
@@ -21,10 +21,10 @@ public class BinarySearch2DSortedArray {
             if(matrix[row][col]==target)
                 return new int[]{row,col};
 
-            if(matrix[row][col]<target)           //eliminating the row < target as every element in that row will be < target
-                row++;
-            else
+            if(matrix[row][col]>target)           //eliminating the column > target as every element in that col will > target
                 col--;
+            else
+                row++;
         }
         return new int[]{-1,-1};
     }

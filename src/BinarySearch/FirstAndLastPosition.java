@@ -1,42 +1,53 @@
-package BinarySearch;
+/*
+package binarySearch;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class FirstAndLastPosition {
     public static void main(String[] args) {
-        int[] arr={1,2,2,3,4,4,4,4,4,4,9};
-        int start=binSearch(arr,4,true);
-        int last=binSearch(arr,4,false);
-        int[] result={start,last};
-        System.out.println(Arrays.toString(result));
 
+        Integer[] arr={5,5,7,7,8,8,8,10};
+        Integer target=8;
+
+        System.out.println("Occurence is at "+ Arrays.toString(searchRange(arr, target)));
 
     }
-    private static int binSearch(int[] arr, int target, boolean findFirstIndex) {
+    public static Integer[] searchRange(Integer[] nums, Integer target){
+        Integer[] ans={-1,-1};
 
-        int start=0,mid=0;
-        int end=arr.length-1;
-        int ans=-1;
+        Integer start= search(nums, target, true);
+        Integer end= search(nums, target, false);
 
-        while(start<=end){
+        ans[0]=start;
+        ans[1]=end;
+        return ans;
+    }
 
-            mid=start+(end-start)/2;        //(start+end)/2 case, it might be possible that adding both> integer limit
-            if(arr[mid]<target){
-                start=mid+1;
-            }
-            else if(arr[mid]>target){
-                end=mid-1;
-            }
+    public static Integer search(Integer[] nums, Integer target, Boolean findStartIndex){
+        int[] ans={-1,-1};
+
+        int start= 0;
+        int end=nums.length-1;
+
+        int middle=0;
+        while (start<= end){
+            middle= start+(end-start)/2;
+
+            if(target>nums[middle])
+                start=middle+1;
+            else if(target<nums[middle])
+                end=middle-1;
             else {
-                ans=mid;
-                if(findFirstIndex){
-                    end=mid-1;
+                ans=middle;
+                if(findStartIndex){
+                    end= middle-1;
+                }else{
+                    start= middle+1;
                 }
-                else start=mid+1;
             }
         }
         return ans;
-
     }
+
 }
+*/

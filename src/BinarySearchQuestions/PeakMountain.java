@@ -1,4 +1,4 @@
-package BinarySearch;
+package BinarySearchQuestions;
 
 public class PeakMountain {
     public static void main(String[] args) {

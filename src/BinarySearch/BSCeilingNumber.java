@@ -1,19 +1,20 @@
-package BS;
+package BinarySearch;
 
-public class BSFloorNumber {
-    //ceiling number= Largest element in the array <= target
+public class BSCeilingNumber {
+
+    //ceiling number= smallest element in the array >= target
     public static void main(String[] args) {
 
         int[] arr={2,4,5,7,8,12,23};
-        int target=5;
+        int target=6;
 
-        int bs=floor(arr,target);
+        int bs=ceiling(arr,target);
         System.out.println("Number found "+ arr[bs]);
         //System.out.println("hello");
 
     }
 
-    private static int floor(int[] arr, int target) {
+    private static int ceiling(int[] arr, int target) {
 
         int start= 0;
         int end=arr.length-1;
@@ -28,6 +29,6 @@ public class BSFloorNumber {
                 end=middle-1;
             else return middle;
         }
-        return end;
+        return start;
     }
 }

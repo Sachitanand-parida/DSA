@@ -1,4 +1,4 @@
-package BinarySearch;
+package BinarySearchQuestions;
 
 public class SmallestLetter {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package BinarySearch;
+package BinarySearchQuestions;
 
 public class RotatedArray {
     public static void main(String[] args) {    //Incomplete solution
