@@ -1,4 +1,4 @@
-package RecursionSubsetPattern;
+package Recursion.RecursionSubsetPattern;
 
 public class SkipCharInString {
     // given str= baccadb       ans= baadb

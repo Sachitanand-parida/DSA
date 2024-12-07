@@ -1,4 +1,4 @@
-package RecursionLevel3;
+package Recursion.RecursionLevel3;
 
 /*col   0   1   2   3
         *   *   *   *       row=4

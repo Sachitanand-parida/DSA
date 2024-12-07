@@ -1,4 +1,4 @@
-package RecusionLevel2;
+package Recursion.RecusionLevel2;
 
 public class ArraySortedOrNot {
     public static void main(String[] args) {

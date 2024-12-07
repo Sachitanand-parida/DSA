@@ -1,4 +1,4 @@
-package RecusionLevel2;
+package Recursion.RecusionLevel2;
 
 import java.util.ArrayList;
 

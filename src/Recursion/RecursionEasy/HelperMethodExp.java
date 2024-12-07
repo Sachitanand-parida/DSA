@@ -1,4 +1,4 @@
-package RecursionEasy;
+package Recursion.RecursionEasy;
 
 /*
 Problem statement: For any num, return the no of steps it would take to reduce the number to 0.

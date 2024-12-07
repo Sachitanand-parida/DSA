@@ -1,4 +1,4 @@
-package RecursionLevel3;
+package Recursion.RecursionLevel3;
 
 import java.util.Arrays;
 
