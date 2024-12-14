@@ -1,4 +1,4 @@
-package LinkedList;
+package LinkedList.Theory;
 
 public class CircularLinkedListMain {
     public static void main(String[] args) {
