@@ -1,9 +1,8 @@
 package LinkedList.InterviewQuestions;
 
-import java.util.ArrayList;
 
 public class CustomLinkedList {
-    private Node head;
+    public Node head;
 
     public void insertNode(int value){
         Node node=new Node(value);
@@ -16,6 +15,47 @@ public class CustomLinkedList {
         node.next= head;
         head= node;
 
+    }
+    public void insertLast(int value){
+
+        Node temp= head;
+        Node node= new Node(value);
+
+        if(head == null){
+            head= node;
+            return;
+        }
+        while (temp.next!= null){
+            temp= temp.next;
+        }
+        temp.next= node;
+
+    }
+    public CustomLinkedList mergeTwoLinkedList( CustomLinkedList first, CustomLinkedList second){
+        Node f= first.head;
+        Node s= second.head;
+
+        CustomLinkedList ans= new CustomLinkedList();
+
+        while (f!= null && s!=null){
+            if(f.value < s.value){
+                ans.insertNode(f.value);
+                f= f.next;
+            }
+            if(s.value < f.value){
+                ans.insertNode(s.value);
+                s= s.next;
+            }
+            while (f!= null){
+                ans.insertNode(f.value);
+                f= f.next;
+            }
+            while (s!= null){
+                ans.insertNode(s.value);
+                s= s.next;
+            }
+        }
+        return ans;
     }
     public void removeDuplicate(){
         Node temp= head;
@@ -37,7 +77,7 @@ public class CustomLinkedList {
         System.out.println("END");
     }
 
-    private class Node{
+    public class Node{
         int value;
         Node next;
 
