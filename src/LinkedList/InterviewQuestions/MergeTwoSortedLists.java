@@ -3,15 +3,15 @@ package LinkedList.InterviewQuestions;
 public class MergeTwoSortedLists {
     public static void main(String[] args) {
         CustomLinkedList first= new CustomLinkedList();
-        first.insertLast(5);
-        first.insertLast(3);
-        first.insertLast(1);
+        first.insertFirst(5);
+        first.insertFirst(3);
+        first.insertFirst(1);
         first.display();
 
         CustomLinkedList second= new CustomLinkedList();
-        second.insertLast(6);
-        second.insertLast(4);
-        second.insertLast(2);
+        second.insertFirst(6);
+        second.insertFirst(4);
+        second.insertFirst(2);
         second.display();
 
         CustomLinkedList customLinkedList = mergeTwoLinkedList(first, second);

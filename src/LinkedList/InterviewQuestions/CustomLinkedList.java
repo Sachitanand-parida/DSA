@@ -31,6 +31,18 @@ public class CustomLinkedList {
         temp.next= node;
 
     }
+    public void insertFirst(int value){
+
+        Node node= new Node(value);
+
+        if(head == null){
+            head= node;
+            return;
+        }
+       node.next= head;
+        head= node;
+
+    }
     public CustomLinkedList mergeTwoLinkedList( CustomLinkedList first, CustomLinkedList second){
         Node f= first.head;
         Node s= second.head;
