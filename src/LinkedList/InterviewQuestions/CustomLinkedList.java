@@ -99,9 +99,12 @@ public class CustomLinkedList {
         System.out.println("END");
     }
 
-    public class Node{
+    public static class Node{
         int value;
         Node next;
+
+        public Node() {
+        }
 
         public Node(int value) {
             this.value = value;
