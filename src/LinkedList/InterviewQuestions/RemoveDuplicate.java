@@ -4,19 +4,19 @@ public class RemoveDuplicate {
     public static void main(String[] args) {
 
         CustomLinkedList ll= new CustomLinkedList();
-        ll.insertNode(5);
-        ll.insertNode(3);
-        ll.insertNode(3);
-        ll.insertNode(3);
-        ll.insertNode(3);
-        ll.insertNode(3);
-        ll.insertNode(3);
-        ll.insertNode(2);
-        ll.insertNode(2);
-        ll.insertNode(2);
-        ll.insertNode(2);
-        ll.insertNode(2);
-        ll.insertNode(2);
+        ll.insertNodeValue(5);
+        ll.insertNodeValue(3);
+        ll.insertNodeValue(3);
+        ll.insertNodeValue(3);
+        ll.insertNodeValue(3);
+        ll.insertNodeValue(3);
+        ll.insertNodeValue(3);
+        ll.insertNodeValue(2);
+        ll.insertNodeValue(2);
+        ll.insertNodeValue(2);
+        ll.insertNodeValue(2);
+        ll.insertNodeValue(2);
+        ll.insertNodeValue(2);
 
         ll.display();
         ll.removeDuplicate();

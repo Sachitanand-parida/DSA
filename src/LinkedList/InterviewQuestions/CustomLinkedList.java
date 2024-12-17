@@ -4,12 +4,22 @@ package LinkedList.InterviewQuestions;
 public class CustomLinkedList {
     public Node head;
 
-    public void insertNode(int value){
+    public void insertNodeValue(int value){
         Node node=new Node(value);
 
         if(head==null){
             head= node;
             node.next=null;
+            return;
+        }
+        node.next= head;
+        head= node;
+
+    }
+    public void insertNode(Node node){
+
+        if(head==null){
+            head= node;
             return;
         }
         node.next= head;
@@ -51,19 +61,19 @@ public class CustomLinkedList {
 
         while (f!= null && s!=null){
             if(f.value < s.value){
-                ans.insertNode(f.value);
+                ans.insertNodeValue(f.value);
                 f= f.next;
             }
             if(s.value < f.value){
-                ans.insertNode(s.value);
+                ans.insertNodeValue(s.value);
                 s= s.next;
             }
             while (f!= null){
-                ans.insertNode(f.value);
+                ans.insertNodeValue(f.value);
                 f= f.next;
             }
             while (s!= null){
-                ans.insertNode(s.value);
+                ans.insertNodeValue(s.value);
                 s= s.next;
             }
         }

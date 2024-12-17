@@ -12,16 +12,18 @@ public class MiddleOfLinkedList {
         linkedList.insertLast(1);
 
         linkedList.display();
-
+        CustomLinkedList ans= new CustomLinkedList();
+        ans.insertNode(middleNode(linkedList.head));
+        ans.display();
     }
     public static CustomLinkedList.Node middleNode(CustomLinkedList.Node head){
         CustomLinkedList.Node slow= head;
         CustomLinkedList.Node fast= head;
-        while (fast!=null && fast.next!=null){
-            slow= slow.next;
-            fast= fast.next;
+        while (fast!=null && fast.next!=null){      //while fast has not reached the end
+            slow= slow.next;                        //while slow reaches the middle element, fast reaches the end
+            fast= fast.next.next;
         }
-        return slow;
+        return slow;                                //return slow, which is exactly at the middle
     }
 
 //    public static CustomLinkedList.Node middle(CustomLinkedList.Node head){
