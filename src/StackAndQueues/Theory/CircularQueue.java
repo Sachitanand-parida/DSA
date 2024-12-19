@@ -44,9 +44,16 @@ public class CircularQueue {
     }
 
     public void display(){
-        for (int i = front; i < end; i++) {
-            System.out.print(arr[i]+ " <- ");
+        if(isEmpty()){
+            System.out.println("Empty");
+            return;
         }
+        int i= front;
+        do {
+            System.out.print(arr[i]+ "<- ");
+            i++;
+            i %= arr.length;
+        }while (i!= end);
         System.out.println("END");
     }
 

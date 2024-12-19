@@ -19,6 +19,8 @@ public class QueueMain {
         circularQueue.insert(86);
         circularQueue.insert(345);
         circularQueue.display();
+        circularQueue.remove();
+        circularQueue.display();
 
 
     }
