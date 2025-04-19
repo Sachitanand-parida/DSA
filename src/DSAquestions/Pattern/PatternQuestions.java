@@ -7,13 +7,20 @@ public class PatternQuestions {
         pattern6();
     }
 
+    /*
+        *********
+         *******
+          *****
+           ***
+            *
+     */
     private static void pattern6() {
-        for (int i = 1; i <= 5; i++) {
-            for (int q = 0; q < i-1; q++) {
+        for (int i = 0; i < 5; i++) {
+            for (int q = 0; q < i; q++) {
                 System.out.print(" ");
             }
-            for (int j = 0; j < 10-i; j++) {
-                System.out.print(" * ");
+            for (int j = 0; j < 2*(5-i)-1; j++) {
+                System.out.print("*");
             }
             System.out.println();
         }
