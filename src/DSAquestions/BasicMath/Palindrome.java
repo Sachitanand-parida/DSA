@@ -35,7 +35,7 @@ public class Palindrome {
         str= str.replaceAll("[^a-zA-Z0-9]", "").toLowerCase();
         int start = 0, end = str.length()-1;
 
-        while (start < end) {
+        while (start <   end) {
             if (str.charAt(start) != str.charAt(end)) {
                 return false;
             }

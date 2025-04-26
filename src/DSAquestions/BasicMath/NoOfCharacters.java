@@ -1,6 +1,6 @@
 package DSAquestions.BasicMath;
 
-public class Questions {
+public class NoOfCharacters {
     public static void main(String[] args) {
         int n=12345, rem=0, count=0;
 
