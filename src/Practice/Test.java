@@ -692,6 +692,137 @@ public class Test {
 
 	    */
 
+
+        //Comparator use case
+        /*
+         // Comparator to sort by roll number
+        Comparator<Student> sortByRoll = Comparator.comparingInt(Student::getRollNumber);
+
+        // Comparator to sort by name
+        Comparator<Student> sortByName = Comparator.comparing(Student::getName);
+
+        // Sort by roll number
+        System.out.println("Sort by Roll Number:");
+        students.stream().sorted(sortByRoll).forEach(System.out::println);
+
+        // Sort by name
+        System.out.println("\nSort by Name:");
+        students.stream().sorted(sortByName).forEach(System.out::println);
+         */
+
+
+
+        /*
+        Reverse String
+        "Java is fun" to "fun is Java"
+
+
+        String str= "Java is fun";
+        String[] s = str.split(" ");
+        Collections.reverse(Arrays.asList(s));
+        System.out.println(String.join(" ",s));
+         */
+
+        /*
+        Unique elements = {1,7,9}
+
+        int[] arr1 ={1,3,5,7};
+        int[] arr2= {3,5,9};
+
+        Set<Integer> set1= Arrays.stream(arr1).boxed().collect(Collectors.toSet());
+        Set<Integer> result= Arrays.stream(arr2).boxed().collect(Collectors.toSet());
+
+        for( int num : set1){
+            if(result.contains(num))
+                result.remove(num);
+            else
+                result.add(num);
+        }
+        System.out.println(result);
+         */
+
+        /*
+        Detect a cycle in linkedList Floyd's Algorithm
+
+                    class ListNode {
+                int val; ListNode next;
+                ListNode(int val) { this.val = val; }
+            }
+
+            public static boolean hasCycle(ListNode head) {
+                ListNode slow = head, fast = head;
+                while (fast != null && fast.next != null) {
+                    slow = slow.next;
+                    fast = fast.next.next;
+                    if (slow == fast) return true;
+                }
+                return false;
+}
+
+         */
+
+        /*
+        Longest string in the list
+
+            List<String> words = List.of("apple", "banana", "kiwi", "grapefruit");
+
+            // accumulator = (s1, s2) -> s1.length() > s2.length() ? s1 : s2
+            Optional<String> longestWord = words.stream()
+                                                .reduce((s1, s2) ->
+                                                    s1.length() >= s2.length() ? s1 : s2
+                                                );
+
+            if (longestWord.isPresent()) {
+                // Output: Longest Word: grapefruit
+                System.out.println("Longest Word: " + longestWord.get());
+            }
+         */
+
+        /*
+        Top 3 repeated words in a paragraph
+
+        String str= "hello hello bhai how are you hello how you you i am good how about you";
+
+        List<String> list = Arrays.stream(str.split(" "))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .sorted(Map.Entry.<String,Long>comparingByValue().reversed())
+                .limit(3)
+                .map(Map.Entry::getKey)
+                .toList();
+        System.out.println(list);
+         */
+
+        /*
+        Find all pairs
+
+         int[] arr1= {2, 4, 3, 5, 7, 8, 9};
+        int sum =7;
+
+        Set<Integer> set = new HashSet<>();
+
+        for(int num : arr1){
+            int target= sum - num;
+            if(set.contains(target))
+                System.out.println("Pair is: "+"("+ num +" , "+ target+ ")");
+            set.add(num);
+        }
+
+         */
+
+        /*
+        Most frequent element in the list
+
+        List<Integer> list= List.of(1,2,2,2,4);
+        Optional<Long> l = list.stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream()
+                .max(Map.Entry.comparingByValue())
+                .map(Map.Entry::getValue);
+
+        l.ifPresent(System.out::println);
+
+         */
     }
 }
 
