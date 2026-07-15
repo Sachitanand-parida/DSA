@@ -195,12 +195,16 @@ public class Test {
         Remove the repeated characters from the string
 
          String str="sachit how are you bro?";
-        String uniqueChars = Arrays.stream(str.split(""))
-                .filter(x -> Collections.frequency(Arrays.stream(str.split("")).toList(), x) == 1)
-                .filter(x -> !x.equals(" "))
-                .map(x -> new StringBuilder().append(x)).collect(Collectors.joining());
+        Map<String, Long> frequency = Arrays.stream(str.split(""))
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
-        System.out.println(uniqueChars);
+        System.out.println(frequency);
+
+        String unique = frequency.entrySet().stream()
+                .filter(x -> !x.equals(" "))
+                .filter(x -> x.getValue() == 1)
+                .map(x -> x.getKey())
+                .collect(Collectors.joining());
 
 
          */
@@ -677,6 +681,17 @@ public class Test {
                             ,Collectors.mapping(
                                     emp->emp.getSalary(),
                                     Collectors.maxBy(Comparator.comparing(Function.identity()))));
+         */
+
+         /*
+        Sort by Age, then Name
+
+        employees.stream()
+                .sorted(
+                        Comparator.comparing(Employee::getAge)
+                                  .thenComparing(Employee::getName)
+                )
+                .forEach(System.out::println);
          */
 
 	    //Collect set data into a TreeSet
