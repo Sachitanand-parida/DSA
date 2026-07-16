@@ -288,6 +288,239 @@ public class Test {
          */
 
         /*
+        First non repeated character
+
+       String str = "swiss";
+        Arrays.stream(str.split(""))
+                .collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting()))
+                .entrySet().stream()
+                .filter(x -> x.getValue() == 1)
+                .map(Map.Entry::getKey)
+                .findFirst()
+                .ifPresent(System.out::println);
+         */
+
+        /*
+        First repeated character
+
+        String str = "programming";
+
+        HashSet<String> set = new HashSet<>();
+        Arrays.stream(str.split(""))
+                .filter(x -> !set.add(x))
+                .findFirst()
+                .ifPresent(System.out::println);
+         */
+
+        /*
+        Reverse every word
+
+        String str = "the sky is blue";         //eht yks si eulb
+
+        String reverse = Arrays.stream(str.split(" "))
+                .map(x -> new StringBuilder(x).reverse())
+                .collect(Collectors.joining(" "));
+        System.out.println(reverse);
+
+         */
+
+        /*
+        Reverse the complete sentence
+
+        String str = "Hello World";
+
+        String reverse = new StringBuilder(str)
+                .reverse()
+                .toString();
+
+        System.out.println(reverse);
+         */
+
+        /*
+        Both work as both return a comparator needed in sorted()
+
+        list.stream().sorted(Collections.reverseOrder()).forEach(System.out::println);
+        list.stream().sorted(Comparator.reverseOrder()).forEach(System.out::println);
+
+         */
+
+        /*
+        Max: list.stream().max(Integer::compare).get();
+        Min: list.stream().min(Integer::compare).get();
+         */
+
+        /*
+        Sort the strings according to length in ascending order
+        List<String> result = list.stream().sorted(Comparator.comparing(String::length))
+        .collect(Collectors.toList());
+         */
+        /*
+        Second highest
+        list.stream().sorted(Comparator.reverseOrder()).skip(1).findFirst().get();
+
+        Second smallest
+        list.stream().sorted().skip(1).findFirst().get();
+         */
+
+        /*
+        Sum: list.stream().mapToInt(Integer::intValue).sum();
+        Average: list.stream().mapToInt(Integer::intValue).average().orElse(0);
+
+         */
+        /*
+        Flatten nested list: list.stream().flatMap(Collection::stream)
+         */
+
+        /*
+        Highest salary employee
+
+        Employee emp = employees.stream()
+        .max(Comparator.comparing(Employee::getSalary))
+        .get();
+
+         */
+
+        /*
+        Average salary department-wise
+
+            Map<String, Double> avg =       //HR - 45000.0    IT - 25000.0 etc
+            employees.stream()
+            .collect(Collectors.groupingBy(
+            Employee::getDepartment,
+            Collectors.averagingDouble(Employee::getSalary)
+            ));
+         */
+
+        /*
+        count employees dept wise
+
+        Map<String, Integer> map = employeeList.stream().
+                .collect(Collectors.groupingBy(Employee::getDepartment), Collectors.counting());
+         */
+
+        /*
+        ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1,2,3,4,5,6));
+
+        partitionBy() takes a predicate and returns a Map with two rows, true or false.
+
+        Map<Boolean, List<Integer>> collect = list.stream()
+                .collect(Collectors.partitioningBy(x -> x % 2 == 0));
+        System.out.println(collect.get(true));
+         */
+
+        /*
+        Find the longest string
+
+        String str = "Hello I am sachit";
+
+        String longest = Arrays.stream(str.split(" "))
+                .max(Comparator.comparing(String::length)).get();
+        System.out.println(longest);
+         */
+
+        /*
+        Find the common elements between the two lists
+
+        List<Integer> l1 =
+        Arrays.asList(1,2,3,4,5);
+
+        List<Integer> l2 =
+        Arrays.asList(4,5,6,7);
+
+        l1.stream()
+        .filter(l2::contains)
+        .forEach(System.out::println);
+         */
+
+        /*
+        Find nth highest salary
+
+        Employee emp =
+        employees.stream()
+        .distinct()
+        .sorted(Comparator.comparing(Employee::getSalary)
+        .reversed())
+        .skip(n-1)
+        .findFirst()
+        .get();
+         */
+
+        /*
+        Find sum of all digits of a number?
+
+        public static int sum(int n){
+        return Arrays.stream(String.valueOf(n).split("")).mapToInt(Integer::parseInt).sum();
+            }
+            public static void main(String[] args) {
+            int i = 6786567;
+            System.out.println(sum(i));
+    }
+         */
+
+        /*
+        Merge two unsorted list into one sorted list
+
+        List<Integer> list1 = Arrays.asList(5, 2, 8, 1, 9);
+        List<Integer> list2 = Arrays.asList(4, 2, 7, 8, 3);
+
+        List<Integer> result = Stream.concat(list1.stream(), list2.stream())
+                                     .distinct()
+                                     .sorted()
+                                     .collect(Collectors.toList());
+         */
+
+        /*
+
+        How to find only duplicate elements with its count from the String ArrayList in Java8?
+
+        List<String> names = Arrays.asList("AA", "BB", "AA", "CC");
+        Map<String, Long> duplicate = names.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().filter(x -> x.getValue() > 1)
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue));
+        System.out.println(duplicate);
+         */
+
+        /*
+
+        How to check if list is empty in Java 8 using Optional, if not null iterate through the list and print the object?
+
+            Optional.ofNullable(noteLst)
+                .orElseGet(Collections::emptyList) // creates empty immutable list: [] in case noteLst is null
+                .stream().filter(Objects::nonNull) //loop through each object and consider non null objects
+                .map(note -> Notes::getTagName) // method reference, consider only tag name
+                .forEach(System.out::println); // it will print tag names
+         */
+
+        /*
+        Duplicate elements with their count
+
+        List<String> names = Arrays.asList("Rahul", "Rohan", "Rahul", "Keshav", "Rohan");
+
+        Map<String, Long> collect = names.stream().collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
+                .entrySet().stream().filter(x -> x.getValue() > 1)
+                .collect(Collectors.toMap(x -> x.getKey(), x -> x.getValue()));
+
+        System.out.println(collect);
+         */
+
+        /*
+        boxed: when we want to convert a stream of primitive to a stream of corresponding wrapper object
+
+        Array int[] arr = {10,15,8,49,25,98,98,32,15};
+        Arrays.stream(arr).boxed().findFirst().ifPresent(System.out::print);
+         */
+
+        /*
+        Starts with a number
+
+        List<String> listOfStrings = Arrays.asList("One", "2wo", "3hree", "Four", "5ive", "6ix","45ro,'7ko");
+
+        List<String> startsWithANumber = listOfStrings.stream()
+        .filter(str -> Character.isDigit(str.charAt(0))).toList();
+        System.out.println(startsWithANumber);
+         */
+
+        /*
         One string is a rotated version of another string
 
         String str1="abc";// abc   bc   abcbc
